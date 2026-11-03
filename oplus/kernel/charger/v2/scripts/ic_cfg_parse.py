@@ -49,7 +49,7 @@ def vict_overwrite_support(vict_cfg):
     return True
 
 
-def vict_read_desc(read_cfg, language='zh'):
+def vict_read_desc(read_cfg, language='en'):
     desc = read_cfg['desc']
     if language in desc:
         return desc[language]
@@ -62,7 +62,7 @@ def vict_read_cmd(read_cfg):
     return read_cfg['cmd']
 
 
-def vict_write_desc(write_cfg, language='zh'):
+def vict_write_desc(write_cfg, language='en'):
     desc = write_cfg['desc']
     if language in desc:
         return desc[language]
@@ -75,7 +75,7 @@ def vict_write_cmd(write_cfg):
     return write_cfg['cmd']
 
 
-def vict_overwrite_desc(overwrite_cfg, language='zh'):
+def vict_overwrite_desc(overwrite_cfg, language='en'):
     desc = overwrite_cfg['desc']
     if language in desc:
         return desc[language]
@@ -1063,9 +1063,7 @@ def creat_debug_file(cfg, file):
 
 
 def language_check(language):
-    if language == 'zh':
-        return
-    elif language == 'en':
+    if language == 'en':
         return
     else:
         show_error("unsupported language: %s" % (language))
@@ -1074,10 +1072,7 @@ def language_check(language):
 def markdown_write_para_info(func, file, language):
     language_check(language)
     if len(func['parameter_list']) > 0:
-        if language == 'zh':
-            file.write("* 参数\n\n")
-            file.write("|序号|参数类型|取值范围|输入/输出|描述|\n")
-        elif language == 'en':
+        if language == 'en':
             file.write("* Parameter\n\n")
             file.write("|number|type|value range|in/out|describe|\n")
         file.write("|:----:|:----:|:----:|:----:|:----|\n")
@@ -1105,19 +1100,14 @@ def markdown_write_para_info(func, file, language):
             param_count += 1
         file.write("\n")
     else:
-        if language == 'zh':
-            file.write("* 参数: N/A\n")
-        elif language == 'en':
+        if language == 'en':
             file.write("* Parameter: N/A\n")
 
 
 def markdown_write_vict_info(func, base, index, file, language):
     language_check(language)
     vict = func['vict']
-    if language == 'zh':
-        file.write("* 工具支持\n\n")
-        file.write("|操作|是否支持|命令|描述|\n")
-    elif language == 'en':
+    if language == 'en':
         file.write("* Tool support\n\n")
         file.write("|operation|support|command|describe|\n")
     file.write("|:----:|:----:|:----:|:----:|\n")
@@ -1175,15 +1165,10 @@ def markdown_write_enum_info(cfg, file, language):
             desc = "None"
         else:
             desc = enum['desc'][language]
-        if language == 'zh':
-            file.write("* 描述: %s\n" % (desc))
-        elif language == 'en':
+        if language == 'en':
             file.write("* Describe: %s\n" % (desc))
 
-        if language == 'zh':
-            file.write("* 详细信息\n\n")
-            file.write("|编号|标识符|名字|描述|\n")
-        elif language == 'en':
+        if language == 'en':
             file.write("* Details\n\n")
             file.write("|index|identifier|name|describe|\n")
         file.write("|:----:|:----:|:----:|:----:|\n")
@@ -1233,9 +1218,7 @@ def markdown_check_write_info(cfg, file, language):
 
     language_check(language)
 
-    if language == 'zh':
-        file.write("# 虚拟IC层接口说明\n")
-    elif language == 'en':
+    if language == 'en':
         file.write("# Virtual IC layer interface description\n")
     for ic in ic_list:
         name = ic['name']
@@ -1247,24 +1230,20 @@ def markdown_check_write_info(cfg, file, language):
         if max_index < len(func_list):
             show_error(name + ": Too many func entries")
 
-        file.write("## %d、%s\n" % (count, name))
+        file.write("## %d. %s\n" % (count, name))
         file.write("version: %s\n" % (version))
 
         for func in func_list:
             check_func_cfg(func, name, index)
             file.write("### %s\n" % (func['lable']))
 
-            if language == 'zh':
-                file.write("* 编号: %d\n" % (base + index))
-            elif language == 'en':
+            if language == 'en':
                 file.write("* Number: %d\n" % (base + index))
             if language not in func['desc']:
                 desc = "None"
             else:
                 desc = func['desc'][language]
-            if language == 'zh':
-                file.write("* 描述: %s\n" % (desc))
-            elif language == 'en':
+            if language == 'en':
                 file.write("* Describe: %s\n" % (desc))
 
             markdown_write_para_info(func, file, language)
@@ -1276,15 +1255,13 @@ def markdown_check_write_info(cfg, file, language):
         base = base + max_index
         count += 1
 
-    if language == 'zh':
-        file.write("## %d、枚举信息\n" % (count))
-    elif language == 'en':
-        file.write("## %d、Enum info\n" % (count))
+    if language == 'en':
+        file.write("## %d. Enum info\n" % (count))
     markdown_write_enum_info(cfg, file, language)
     markdown_write_ic_enum_info(cfg, file, language)
 
 
-def creat_markdown_file(cfg, file, language='zh'):
+def creat_markdown_file(cfg, file, language='en'):
     language_check(language)
     markdown_check_write_info(cfg, file, language)
 

@@ -187,7 +187,7 @@ static void pogo_keyboard_event_send(unsigned char value)
     spin_unlock_irqrestore(&pogo_keyboard_client->event_fifo_lock, flags);
 }
 
-//计算crc16
+//compute crc16
 static unsigned short app_compute_crc16(unsigned short crc, unsigned char data, unsigned short polynomial)
 {
     unsigned char i = 0;
@@ -203,7 +203,7 @@ static unsigned short app_compute_crc16(unsigned short crc, unsigned char data, 
     return crc;
 }
 
-//获取crc16
+//get crc16
 unsigned short app_crc16_get(unsigned char *buf, unsigned short len, unsigned char crc_type)
 {
     unsigned char i = 0;
@@ -236,22 +236,22 @@ int uart_package_data(char *buf, int len, unsigned char *p_out, int *p_len)
     unsigned short need_len = 0;
     unsigned short crc16 = 0;
 
-    //头同步码8Byte 0x55
+    //header sync code 8 bytes 0x55
     for (i = 0; i < 8; i++) {
         p_out[i] = ONE_WIRE_BUS_PACKET_HEAD_SYNC_CODE;
     }
-    //起始码
+    //start code
     p_out[8] = ONE_WIRE_BUS_PACKET_XXX_START_CODE;
-    //源地址
+    //source address
     p_out[9] = ONE_WIRE_BUS_PACKET_PAD_ADDR;
-    //目标地址
+    //destination address
     p_out[10] = ONE_WIRE_BUS_PACKET_KEYBOARD_ADDR;
-    //主命令
+    //main command
     p_out[11] = buf[0];
     len = buf[1];
-    //总长度
+    //total length
     p_out[12] = len;
-    //子命令数据
+    //subcommand data
     for (i = 0; i < len; i++) {
         p_out[13 + i] = buf[i + 2];
     }
@@ -259,9 +259,9 @@ int uart_package_data(char *buf, int len, unsigned char *p_out, int *p_len)
     //CRC16
     p_out[13 + len] = (unsigned char)(crc16 >> 8);
     p_out[14 + len] = (unsigned char)(crc16 & 0x00ff);
-    //结束码
+    //end code
     p_out[15 + len] = ONE_WIRE_BUS_PACKET_XXX_END_CODE;
-    //尾同步码4byte 0xAA
+    //trailer sync code 4 bytes 0xAA
     for (i = 0; i < 4; i++) {
         p_out[16 + len + i] = ONE_WIRE_BUS_PACKET_TAIL_SYNC_CODE;
     }
@@ -544,7 +544,7 @@ static int pogo_keyboard_mod_data_process(char *buf, int len)
         case ONE_WIRE_BUS_PACKET_SYNC_UPLOAD_CMD:
             // packet format: 0x2F + 0x04(len=4) + 1-byte sub-cmd + 3-byte data.
             if ((pogo_keyboard_client->pogo_keyboard_status & KEYBOARD_CONNECT_STATUS) == 0) {
-                //获取MAC地址及品牌标志
+                //get MAC address and brand flag
                 if (buf[2] == 0x01 && buf[3] == 0x02) {
                     pogo_keyboard_client->keyboard_brand = buf[4];
                     memcpy((unsigned char *)&pogo_keyboard_client->mac_addr, &buf[5], 6);
@@ -571,7 +571,7 @@ static int pogo_keyboard_mod_data_process(char *buf, int len)
                 //     sub-cmd = 0x01: power-up sync packet, 3-byte data = 0xCC.
                 //     sub-cmd = 0x05: heartbeat packet, 3-byte data = 0xAA 0xBB 0BIT:CAPSLOCK|1BIT:NUMLOCK|2BIT:MUTE|3BIT:MIC|4BIT:FNLOCK.
                 if (buf[2] == 0x01) { //by power on data for after plug out quick plug in connect status not update
-                    //获取MAC地址及品牌标志
+                    //get MAC address and brand flag
                     if (buf[3] == 0x02) {
                         pogo_keyboard_client->keyboard_brand = buf[4];
                         memcpy((unsigned char *)&pogo_keyboard_client->mac_addr, &buf[5], 6);
@@ -735,7 +735,7 @@ int pogo_keyboard_recv(char *buf, int len)
         if (rx_data == ONE_WIRE_BUS_PACKET_HEAD_SYNC_CODE) {
             head_sync_code_cnt++;
         } else if (rx_data == ONE_WIRE_BUS_PACKET_XXX_START_CODE || rx_data == ONE_WIRE_BUS_PACKET_XXX_REPEAT_CODE) {
-            //收到起始码后，再判断起始码之前有没有收到连续的头同步码
+            //after the start code, check whether consecutive header sync codes came before it
             if (head_sync_code_cnt >= 4) {
                 rec_temp_buf_index = 0;
                 recv_start_flag = true;
@@ -750,7 +750,7 @@ int pogo_keyboard_recv(char *buf, int len)
                 && recv_buf[rec_temp_buf_index - 1] == ONE_WIRE_BUS_PACKET_TAIL_SYNC_CODE
                 && recv_buf[rec_temp_buf_index - 2] == ONE_WIRE_BUS_PACKET_TAIL_SYNC_CODE
                 && recv_buf[rec_temp_buf_index - 3] == ONE_WIRE_BUS_PACKET_XXX_END_CODE) {
-                //当收到0xFE,0xAA,0xAA字段时，认为接收到完整一包了，并开始进行包处理
+                //on 0xFE,0xAA,0xAA, treat it as a complete packet and start processing it
                 recv_start_flag = false;
                 recv_decode_flag = true;
                 recv_decode_cnt++;
@@ -1915,7 +1915,7 @@ static struct attribute_group pogo_keyboard_attribute_group = {
 
 static void pogo_keyboard_report_tp_dist(void)
 {
-    char temp[COLS * 7 + 5 + 1 ] = {0}; // 每个元素6字符(十进制) + 1空格 + 5头显示+ 终止符
+    char temp[COLS * 7 + 5 + 1 ] = {0}; // 6 chars per element (decimal) + 1 space + 5 header + terminator
     int len = 0;
     int i, j = 0;
     kb_info("--------tp_debug_s--------\n");

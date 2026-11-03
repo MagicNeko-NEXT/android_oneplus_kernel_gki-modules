@@ -37,24 +37,24 @@ struct proc_dir_entry *pjadard_blackscreen_baseline_file = NULL;
 #endif
 
 char *jd_panel_maker_list[JD_PANEL_MAKER_LIST_SIZE] = {
-    "AUO",      /* 友達     */
-    "BOE",      /* 京東方   */
-    "CPT",      /* 華映     */
-    "CSOT",     /* 華星     */
-    "CTC",      /* 深超     */
-    "CTO",      /* 華銳     */
-    "HSD",      /* 瀚宇彩晶 */
-    "INX",      /* 群創     */
-    "IVO",      /* 龍騰     */
-    "JDI",      /* 日本顯示 */
-    "LGD",      /* 樂金顯示 */
-    "MDT",      /* 華佳彩   */
-    "PANDA",    /* 中電熊貓 */
-    "SDC",      /* 三星顯示 */
-    "SHARP",    /* 夏普     */
-    "TM",       /* 天馬     */
-    "TRULY",    /* 信利     */
-    "HKC",      /* 惠科     */
+    "AUO",      /* AU Optronics */
+    "BOE",      /* BOE */
+    "CPT",      /* Chunghwa Picture Tubes */
+    "CSOT",     /* CSOT */
+    "CTC",      /* Century Display */
+    "CTO",      /* CTO */
+    "HSD",      /* HannStar */
+    "INX",      /* Innolux */
+    "IVO",      /* InfoVision */
+    "JDI",      /* Japan Display */
+    "LGD",      /* LG Display */
+    "MDT",      /* CPT Display */
+    "PANDA",    /* CEC Panda */
+    "SDC",      /* Samsung Display */
+    "SHARP",    /* Sharp */
+    "TM",       /* Tianma */
+    "TRULY",    /* Truly */
+    "HKC",      /* HKC */
     "N/A"
 };
 
@@ -2859,9 +2859,9 @@ static void jadard_fb_register(struct work_struct *work)
 #ifdef JD_CONFIG_SPRD_DRM
 /*
 *jadard_resume_work_function
-*Param：struct work_struct *work
-*Return：void
-*Purpose：queue work for Reduce screen time
+*Param: struct work_struct *work
+*Return: void
+*Purpose: queue work for Reduce screen time
 */
 static void jadard_resume_work_function(struct work_struct *work)
 {

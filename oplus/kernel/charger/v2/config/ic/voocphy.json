@@ -5,18 +5,14 @@
     "list": [
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_ENABLE",
-            "desc": {
-                "zh": "voocphy使能"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -27,9 +23,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_RESET_AGAIN",
-            "desc": {
-                "zh": "voocphy复位"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -41,18 +35,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_SET_CURR_LEVEL",
-            "desc": {
-                "zh": "voocphy设置快充电流等级"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "参考cool down电流挡位对照表"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -63,18 +53,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_SET_MATCH_TEMP",
-            "desc": {
-                "zh": "voocphy设置壳温"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "壳温, 单位:0.1℃"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -85,9 +71,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_SET_PDQC_CONFIG",
-            "desc": {
-                "zh": "PD/QC适配器升压之前需要 OVP, OCP等"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -99,18 +83,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_CP_VBAT",
-            "desc": {
-                "zh": "从CP测读取电池电压"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "电池电压"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -121,18 +101,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_SET_CHG_AUTO_MODE",
-            "desc": {
-                "zh": "使能或关闭 auto mode"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -143,18 +119,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_BCC_MAX_CURR",
-            "desc": {
-                "zh": "读取voocphy BCC最大电流"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "BCC最大电流"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -165,18 +137,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_BCC_MIN_CURR",
-            "desc": {
-                "zh": "读取voocphy BCC最小电流"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "BCC最小电流"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -187,18 +155,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_BCC_EXIT_CURR",
-            "desc": {
-                "zh": "读取voocphy BCC退出电流"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "BCC退出电流"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -209,18 +173,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_FASTCHG_ING",
-            "desc": {
-                "zh": "读取voocphy BCC快充状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "BCC快充状态"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -231,18 +191,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_BCC_TEMP_RANGE",
-            "desc": {
-                "zh": "读取voocphy BCC温度范围"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "BCC温度范围"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -253,18 +209,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_SET_BCC_CURR",
-            "desc": {
-                "zh": "设置voocphy BCC电流"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "BCC设置电流"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -275,18 +227,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_SET_UCP_TIME",
-            "desc": {
-                "zh": "设置voocphy UCP时间"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "设置voocphy UCP时间"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -297,18 +245,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_RETRY_FLAG",
-            "desc": {
-                "zh": "获取进入快充retry标记"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -319,25 +263,19 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_SET_AP_FASTCHG_ALLOW",
-            "desc": {
-                "zh": "通知ADSP是否允许快充"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int","bool"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "通知ADSP是否允许快充"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "通知是否进入假充"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -348,50 +286,38 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_FRAME_HEAD",
-            "desc": {
-                "zh": "获取快充帧头信息"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-2",
                     "type": "out",
-                    "desc": {
-                        "zh": "0:VOOC2.0 1:VOOC3.0 2:SVOOC"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": {
                     "cmd": "vict -f {id} -G vic-*",
-                    "desc": {
-                        "zh": "返回快充帧头信息"
-                    }
+                    "desc": {}
                 },
                 "write": false,
                 "overwrite": {
                     "cmd": "vict -f {id} -O val vic-*",
-                    "desc": {
-                        "zh": "-O后面跟需要覆盖的帧头信息,0:VOOC2.0 1:VOOC3.0 2:SVOOC"
-                    }
+                    "desc": {}
                 }
             }
         },
        {
             "lable": "OPLUS_IC_FUNC_VOOCPHY_GET_FASTCHG_COMMU_ING",
-            "desc": {
-                "zh": "获取快充通讯状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "1: 通讯中, 0: 非通讯"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {

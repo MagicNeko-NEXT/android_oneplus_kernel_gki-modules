@@ -80,7 +80,7 @@ struct
         UINT8 value;
         SINT16 mcdiff[16*36];
         SINT16 ScWaterRXdiff[36];
-        SINT16 ScWaterTXdiff[36];   多余TX数量的值可以忽略
+        SINT16 ScWaterTXdiff[36];   values for extra TX counts can be ignored
         SINT16 ScNormalRXdiff[36];
 }
 */

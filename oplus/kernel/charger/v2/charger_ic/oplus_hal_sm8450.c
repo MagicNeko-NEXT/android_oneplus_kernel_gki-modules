@@ -5564,7 +5564,7 @@ static int oplus_chg_set_input_current(struct battery_chg_dev *bcdev, int curren
 				msecs_to_jiffies(3000)); /* vbus_collapse_status resumes after three seconds */
 			bcdev->rerun_max--;
 		}
-		chg_debug("vbus_collapse，use 500 here\n");
+		chg_debug("vbus_collapse, use 500 here\n");
 		goto aicl_boost_back;
 	}
 	chg_vol = qpnp_get_prop_charger_voltage_now(bcdev);

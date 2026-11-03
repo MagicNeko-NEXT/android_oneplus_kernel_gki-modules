@@ -5,97 +5,73 @@
     "list": [
         {
             "lable": "OPLUS_IC_FUNC_SET_HW_ENABLE",
-            "desc": {
-                "zh": "switching/mos开关控制"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_GET_HW_ENABLE",
-            "desc": {
-                "zh": "获取switching/mos开关状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": {
                     "cmd": "vict -f {id} -G vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "write": false,
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_GET_DEVICE_TYPE",
-            "desc": {
-                "zh": "获取器件类型"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "0: NO_PARALLEL_TYPE, 1: PARALLEL_SWITCH_IC, 2: PARALLEL_MOS_CTRL"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": {
                     "cmd": "vict -f {id} -G vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "write": false,
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         }

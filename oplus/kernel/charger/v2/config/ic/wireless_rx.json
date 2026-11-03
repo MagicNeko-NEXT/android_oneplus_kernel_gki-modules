@@ -5,18 +5,14 @@
     "list": [
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_ENABLE",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -27,18 +23,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_IS_ENABLE",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -49,18 +41,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_IS_CONNECTED",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -71,18 +59,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_VOUT",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -93,18 +77,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_VOUT",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -115,18 +95,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_VRECT",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -137,18 +113,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_IOUT",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -159,18 +131,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_TRX_VOL",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -181,18 +149,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_TRX_CURR",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -203,18 +167,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_CEP_COUNT",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -225,18 +185,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_CEP_VAL",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -247,18 +203,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_WORK_FREQ",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -269,18 +221,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_RX_MODE",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["enum oplus_chg_wls_rx_mode *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -291,18 +239,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_RX_MODE",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["enum oplus_chg_wls_rx_mode"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -313,18 +257,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_DCDC_ENABLE",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -335,18 +275,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_TRX_ENABLE",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -357,18 +293,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_TRX_START",
-            "desc": {
-                "zh": "设置反充START命令"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "0:关闭反充START, 1:开启反充START"
-                    }
+                    "desc": {}
                 }
 	    ],
             "vict": {
@@ -379,18 +311,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_TRX_STATUS",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u8 *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -401,18 +329,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_TRX_ERR",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u32 *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -423,18 +347,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_HEADROOM",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -445,18 +365,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_HEADROOM",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -467,18 +383,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SEND_MATCH_Q",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["u8 []"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -489,39 +401,29 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_FOD_PARM",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["u8 []", "int", "int", "int"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "1:BPP, 2:EPP, 3:FAST mode"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "0:无磁吸保护壳, 1:有磁吸保护壳"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -532,32 +434,24 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SEND_MSG",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["unsigned char []", "int", "int"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -568,25 +462,19 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_REG_MSG_CALLBACK",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["void *", "void (*msg_call_back)(void *, u8 [])"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -597,18 +485,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_RX_VERSION",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u32 *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -619,18 +503,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_TRX_VERSION",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u32 *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -641,25 +521,19 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_UPGRADE_FW_BY_BUF",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["unsigned char *", "int"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -670,9 +544,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_UPGRADE_FW_BY_IMG",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -684,9 +556,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_CHECK_CONNECT",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -698,18 +568,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_EVENT_CODE",
-            "desc": {
-                "zh": "N/A"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["enum oplus_chg_wls_event_code *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -720,18 +586,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_BRIDGE_MODE",
-            "desc": {
-                "zh": "获取全桥半桥等模式"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "0:半桥模式, 1:全桥模式"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -742,18 +604,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_DIS_INSERT",
-            "desc": {
-                "zh": "控制RXIC FORCE PD的信号,用于IC控制ACDRV PD从而控制USBIN的导通与否"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "0:拉低FORCE PD/导通, 1:拉高FORCE PD/不导通"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -764,18 +622,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_STANDBY_CONFIG",
-            "desc": {
-                "zh": "控制RXIC进入/退出standby模式"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "0:进入standby模式, 1:退出standby模式"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -786,18 +640,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_COMU",
-            "desc": {
-                "zh": "RX IC通信电容控制"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "0:RX固件控制, 1:使用A组电容, 2:使用B组电容, 3:同时使用AB两组电容"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -808,18 +658,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_GET_TX_ID",
-            "desc": {
-                "zh": "获取TX manufacturer id"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "TX manufacturer id的值"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -830,9 +676,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SET_SILENT",
-            "desc": {
-                "zh": "设置RX进入silent sleep模式"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -844,18 +688,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_RX_SEND_EPP_MATCH_Q",
-            "desc": {
-                "zh": "EPP模式下设置RX的Q值和F值"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["u8 []"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {

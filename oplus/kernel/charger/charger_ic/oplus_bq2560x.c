@@ -2208,7 +2208,7 @@ static struct charger_ops bq2560x_chg_ops = {
 	.event = bq2560x_do_event,
 };
 
-/* v-haoyunlai 给otg节点赋值 */
+/* v-haoyunlai assigns the otg node value */
 bool oplus_get_otg_online_status_default(void)
 {
 #ifdef CONFIG_TCPC_CLASS
