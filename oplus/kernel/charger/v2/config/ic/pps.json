@@ -5,9 +5,7 @@
     "list": [
         {
             "lable": "OPLUS_IC_FUNC_PPS_HANDSHAKE",
-            "desc": {
-                "zh": "pps握手"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -19,48 +17,36 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_PDO_SET",
-            "desc": {
-                "zh": "设置PDO"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int", "int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的电压，单位mV"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的电流，单位mA"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{0},{1} vic-*",
-                    "desc": {
-                        "zh": "设置pdo, {0}为电压，{1}为电流"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {0},{1} vic-*",
-                    "desc": {
-                        "zh": "覆盖pdo, {0}为电压，{1}为电流"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_HARD_RESET",
-            "desc": {
-                "zh": "硬复位"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -68,18 +54,14 @@
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S vic-*",
-                    "desc": {
-                        "zh": "设置硬复位"
-                    }
+                    "desc": {}
                 },
                 "overwrite": false
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_EXIT",
-            "desc": {
-                "zh": "退出pps充电"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -87,59 +69,45 @@
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S vic-*",
-                    "desc": {
-                        "zh": "退出pps充电"
-                    }
+                    "desc": {}
                 },
                 "overwrite": false
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_CONFIG_WD",
-            "desc": {
-                "zh": "设置看门狗超时时间"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u16"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的超时时间，单位ms"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{0} vic-*",
-                    "desc": {
-                        "zh": "设置超时时间, {0}为时间"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {0} vic-*",
-                    "desc": {
-                        "zh": "覆盖超时时间, {0}为时间"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_GET_DEV_INFO",
-            "desc": {
-                "zh": "获取device信息"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u64 *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "device信息，具体格式见pps协议手册的device info数据格式"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -150,18 +118,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_GET_ERR_INFO",
-            "desc": {
-                "zh": "获取错误信息"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u64 *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "错误信息，具体格式见pps协议手册的error info数据格式"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -172,18 +136,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_GET_PPS_STATUS",
-            "desc": {
-                "zh": "获取供电设备信息"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u32 *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "供电设备信息，具体格式见pps协议手册的GET_PPS_STATUS数据格式"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -194,18 +154,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_GET_CABLE_INFO",
-            "desc": {
-                "zh": "获取线缆信息"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u64 *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "线缆信息，具体格式见pps协议手册的cable info数据格式"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -216,25 +172,19 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_GET_PDO_INFO",
-            "desc": {
-                "zh": "获取pdo信息"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u32 *", "int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "用于存放pdo的buf"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "存放pdo的buf的长度"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -245,9 +195,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_VERIFY_ADAPTER",
-            "desc": {
-                "zh": "适配器鉴权校验"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -259,25 +207,19 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_PPS_GET_POWER_CHANGE_INFO",
-            "desc": {
-                "zh": "获取功率变化的信息"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u32 *", "int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "用于存放power change信息的buf"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "存放power change信息的buf的长度"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -288,34 +230,26 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_FIXED_PDO_SET",
-            "desc": {
-                "zh": "设置固定PDO"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int", "int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的电压，单位mV"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的电流，单位mA"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{0},{1} vic-*",
-                    "desc": {
-                        "zh": "设置pdo, {0}为电压，{1}为电流"
-                    }
+                    "desc": {}
                 },
                 "overwrite": false
             }

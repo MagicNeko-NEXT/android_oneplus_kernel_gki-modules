@@ -5,9 +5,7 @@
     "list": [
         {
             "lable": "OPLUS_IC_FUNC_VOOC_FW_UPGRADE",
-            "desc": {
-                "zh": "触发固件升级"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -19,25 +17,19 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_USER_FW_UPGRADE",
-            "desc": {
-                "zh": "外部固件升级"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["const u8 *", "u32"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "存放固件的buf"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "固件大小"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -48,9 +40,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_FW_CHECK_THEN_RECOVER",
-            "desc": {
-                "zh": "固件检查"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -62,9 +52,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_FW_CHECK_THEN_RECOVER_FIX",
-            "desc": {
-                "zh": "固件检查"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -76,18 +64,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_FW_VERSION",
-            "desc": {
-                "zh": "获取固件版本号"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["u32 *"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "固件版本号"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -98,9 +82,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_EINT_REGISTER",
-            "desc": {
-                "zh": "data中断注册"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -112,9 +94,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_EINT_UNREGISTER",
-            "desc": {
-                "zh": "data中断注销"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -126,9 +106,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_SET_DATA_ACTIVE",
-            "desc": {
-                "zh": "设置data信号为active"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -140,9 +118,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_SET_DATA_SLEEP",
-            "desc": {
-                "zh": "设置data信号为sleep"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -154,9 +130,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_SET_CLOCK_ACTIVE",
-            "desc": {
-                "zh": "设置clock信号为active"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -168,9 +142,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_SET_CLOCK_SLEEP",
-            "desc": {
-                "zh": "设置clock信号为sleep"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -182,18 +154,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_SET_SWITCH_MODE",
-            "desc": {
-                "zh": "设置快充开关状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-2",
                     "type": "in",
-                    "desc": {
-                        "zh": "0:normal mode, 1:vooc mode, 2:headphone mode"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -204,18 +172,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_SWITCH_MODE",
-            "desc": {
-                "zh": "获取快充开关状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-2",
                     "type": "out",
-                    "desc": {
-                        "zh": "0:normal mode, 1:vooc mode, 2:headphone mode"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -226,18 +190,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_DATA_GPIO_VAL",
-            "desc": {
-                "zh": "获取data gpio的电平值"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -248,18 +208,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_RESET_GPIO_VAL",
-            "desc": {
-                "zh": "获取reset gpio的电平值"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -270,18 +226,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_CLOCK_GPIO_VAL",
-            "desc": {
-                "zh": "获取clock gpio的电平值"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -292,18 +244,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_READ_DATA",
-            "desc": {
-                "zh": "获取mcu或voocphy传递的8位data数据"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -314,32 +262,24 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_REPLY_DATA",
-            "desc": {
-                "zh": "向mcu回复数据"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int", "int", "int"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "回复的数据内容"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "协议数据宽度"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "*",
                     "type": "in",
-                    "desc": {
-                        "zh": "灭屏温控电流值"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -350,9 +290,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_RESET_ACTIVE",
-            "desc": {
-                "zh": "复位mcu为active状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -364,9 +302,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_RESET_ACTIVE_FORCE",
-            "desc": {
-                "zh": "强制复位mcu为active状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -378,9 +314,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_RESET_SLEEP",
-            "desc": {
-                "zh": "复位mcu为sleep状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -392,18 +326,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_BOOT_BY_GPIO",
-            "desc": {
-                "zh": "判断mcu是否处于启动阶段"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "0:不是, 1:是"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -414,18 +344,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_UPGRADING",
-            "desc": {
-                "zh": "判断是否正在升级固件"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "0:不是, 1:是"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -436,18 +362,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_CHECK_FW_STATUS",
-            "desc": {
-                "zh": "检查固件是否正常"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "0:异常, 1:正常"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -458,18 +380,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_IC_DEV",
-            "desc": {
-                "zh": "获取VOOC通讯最终使用的物理IC的ic_dev结构体"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["struct oplus_chg_ic_dev **"],
             "parameter_desc": [
                 {
                     "range": "*",
                     "type": "out",
-                    "desc": {
-                        "zh": "VOOC通讯最终使用的物理IC的ic_dev结构体指针"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -480,18 +398,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_CURVE_CURR",
-            "desc": {
-                "zh": "获取充电曲线电流"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "电流值,单位ma"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -502,18 +416,14 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_GET_REAL_CURVE_CURR",
-            "desc": {
-                "zh": "获取充电曲线的电池电流"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int *"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "out",
-                    "desc": {
-                        "zh": "电流值,单位ma"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
@@ -524,9 +434,7 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_VOOC_SET_SHUTDOW_SWITCH_MODE",
-            "desc": {
-                "zh": "关机时候设置快充相关状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": [],
             "parameter_desc": [],
@@ -534,9 +442,7 @@
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": false
             }

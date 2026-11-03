@@ -6,8 +6,7 @@
         {
             "lable": "OPLUS_IC_FUNC_EXIT",
             "desc": {
-                "en": "ic exit interface",
-                "zh": "IC退出接口"
+                "en": "ic exit interface"
             },
             "auto_debug_code": true,
             "parameter_list": [],
@@ -16,9 +15,7 @@
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": false
             }
@@ -26,8 +23,7 @@
         {
             "lable": "OPLUS_IC_FUNC_INIT",
             "desc": {
-                "en": "ic init interface",
-                "zh": "IC初始化接口,IC在使用前必须先进行初始化"
+                "en": "ic init interface"
             },
             "auto_debug_code": true,
             "parameter_list": [],
@@ -36,9 +32,7 @@
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": false
             }
@@ -46,8 +40,7 @@
         {
             "lable": "OPLUS_IC_FUNC_REG_DUMP",
             "desc": {
-                "en": "ic reg dump",
-                "zh": "dump IC的所有寄存器"
+                "en": "ic reg dump"
             },
             "auto_debug_code": true,
             "parameter_list": [],
@@ -56,42 +49,32 @@
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": false
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_SMT_TEST",
-            "desc": {
-                "zh": "获取芯片SMT测试结果（用于SMT阶段检查芯片是否焊接OK）"
-            },
+            "desc": {},
             "auto_debug_code": false,
             "parameter_list": ["char[]", "int"],
             "parameter_desc": [
                 {
-                    "range": "字符串",
+                    "range": "string",
                     "type": "out",
-                    "desc": {
-                        "zh": "用于接收输出结果的buf"
-                    }
+                    "desc": {}
                 },
                 {
                     "range": "N/A",
                     "type": "in",
-                    "desc": {
-                        "zh": "参数0对应的buf长度"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": {
                     "cmd": "vict -f {id} -G vic-*",
-                    "desc": {
-                        "zh": "返回测试结果字符串"
-                    }
+                    "desc": {}
                 },
                 "write": false,
                 "overwrite": false
@@ -99,65 +82,49 @@
         },
         {
             "lable": "OPLUS_IC_FUNC_CHIP_ENABLE",
-            "desc": {
-                "zh": "IC使能接口"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "1: 使能, 0: 禁用"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_CHIP_IS_ENABLE",
-            "desc": {
-                "zh": "判断IC是否使能"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "1: 已使能, 0: 未使能"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": {
                     "cmd": "vict -f {id} -G vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "write": false,
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         }

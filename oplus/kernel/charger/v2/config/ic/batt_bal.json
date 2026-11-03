@@ -5,306 +5,230 @@
     "list": [
         {
             "lable": "OPLUS_IC_FUNC_BAL_GET_ENABLE",
-            "desc": {
-                "zh": "获取batt bal开关状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": {
                     "cmd": "vict -f {id} -G vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "write": false,
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_GET_PMOS_ENABLE",
-            "desc": {
-                "zh": "获取batt bal pmos开关状态"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool *"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "out",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": {
                     "cmd": "vict -f {id} -G vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "write": false,
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_SET_PMOS_ENABLE",
-            "desc": {
-                "zh": "batt bal pmos开关控制"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_SET_HW_ENABLE",
-            "desc": {
-                "zh": "batt bal 硬件开关控制"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_SET_CONVER_ENABLE",
-            "desc": {
-                "zh": "batt bal conver寄存器使能控制"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["bool"],
             "parameter_desc": [
                 {
                     "range": "0-1",
                     "type": "in",
-                    "desc": {
-                        "zh": "1: 使能, 0: 关闭"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_SET_VOUT",
-            "desc": {
-                "zh": "设置BAL VOUT截止电压点"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的电压点, 单位mV"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_SET_ITERM",
-            "desc": {
-                "zh": "设置BAL ITERM截止电流"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的电流点, 单位mA"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_SET_IREF",
-            "desc": {
-                "zh": "设置BAL IREF均衡电流"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的电流点, 单位mA"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_SET_FLOW_DIR",
-            "desc": {
-                "zh": "设置BAL FLOW DIR均衡方向"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-2",
                     "type": "in",
-                    "desc": {
-                        "zh": "要设置的均衡方向"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {
                 "read": false,
                 "write": {
                     "cmd": "vict -f {id} -S{val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 },
                 "overwrite": {
                     "cmd": "vict -f {id} -O {val} vic-*",
-                    "desc": {
-                        "zh": "N/A"
-                    }
+                    "desc": {}
                 }
             }
         },
         {
             "lable": "OPLUS_IC_FUNC_BAL_HW_INIT",
-            "desc": {
-                "zh": "复位通知"
-            },
+            "desc": {},
             "auto_debug_code": true,
             "parameter_list": ["int"],
             "parameter_desc": [
                 {
                     "range": "0-*",
                     "type": "in",
-                    "desc": {
-                        "zh": "复位的参数，表示具体执行复位准备还是马上复位等具体流程"
-                    }
+                    "desc": {}
                 }
             ],
             "vict": {

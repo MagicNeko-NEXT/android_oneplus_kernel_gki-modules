@@ -144,7 +144,7 @@ static int himax_spi_write(struct chip_data_hx83112a_nf *chip_info,
 
 	return himax_spi_sync(chip_info, &m);
 }
-#endif /* end of !defined(CONFIG_VMAP_STACK）|| defined(CONFIG_TOUCHPANEL_MTK_PLATFORM)*/
+#endif /* end of !defined(CONFIG_VMAP_STACK) || defined(CONFIG_TOUCHPANEL_MTK_PLATFORM)*/
 
 static int himax_bus_read(struct chip_data_hx83112a_nf *chip_info,
 			  uint8_t command, uint32_t length, uint8_t *data)
