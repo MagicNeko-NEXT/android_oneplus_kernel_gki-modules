@@ -1344,7 +1344,7 @@ def main():
         if args.language != None:
             language = args.language
         else:
-            language = 'zh'
+            language = 'en'
         markdown_file = args.markdown
         markdown = open(markdown_file, 'w')
         creat_markdown_file(merge_cfg_data, markdown, language)
