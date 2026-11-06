@@ -130,10 +130,10 @@ static void init_project_version(void)
             return;
         }
 
-        pr_info("get smem size=%d, size of ocdt=%d\n", smem_size, sizeof(ProjectInfoOCDT));
+        pr_info("get smem size=%zu, size of ocdt=%zu\n", smem_size, sizeof(ProjectInfoOCDT));
         if (smem_size != sizeof(ProjectInfoOCDT)) {
             old_midplat_version = true;
-            pr_info("get smem size=%d, size of ocdt=%d\n", smem_size, sizeof(ProjectInfoOCDT));
+            pr_info("get smem size=%zu, size of ocdt=%zu\n", smem_size, sizeof(ProjectInfoOCDT));
         }
 
         g_project = (ProjectInfoOCDT *)smem_addr;
