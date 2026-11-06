@@ -1,0 +1,2 @@
+obj-m := boot_mode.o
+KBUILD_EXTRA_SYMBOLS += $(M)/../cmdline_parser/Module.symvers
