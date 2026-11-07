@@ -7,6 +7,7 @@
 
 #include <linux/interrupt.h>
 #include <linux/i2c.h>
+#include <linux/pinctrl/consumer.h>
 #include <linux/version.h>
 #include <linux/delay.h>
 #include <linux/module.h>
@@ -3476,8 +3477,7 @@ struct oplus_chg_ic_virq mp2650_virq_table[] = {
 	{ .virq_id = OPLUS_IC_VIRQ_PLUGIN },
 };
 
-static int mp2650_driver_probe(struct i2c_client *client,
-			       const struct i2c_device_id *id)
+static int mp2650_driver_probe(struct i2c_client *client)
 {
 	int ret = 0;
 	struct chip_mp2650 *chg_ic;
@@ -3565,9 +3565,8 @@ reg_ic_err:
 
 static struct i2c_driver mp2650_i2c_driver;
 
-static int mp2650_driver_remove(struct i2c_client *client)
+static void mp2650_driver_remove(struct i2c_client *client)
 {
-	return 0;
 }
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 4, 0))
