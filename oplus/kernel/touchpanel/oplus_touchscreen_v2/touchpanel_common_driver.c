@@ -65,6 +65,7 @@
 #if IS_ENABLED(CONFIG_TOUCHPANEL_NOTIFY)
 #include "touchpanel_notify/touchpanel_event_notify.h"
 #endif
+#define TP_USE_FB_NOTIFIER (IS_ENABLED(CONFIG_FB) && !IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER))
 #define MAX_NODE_DATA_LENGTH         60
 
 /*******Part0:LOG TAG Declear************************/
@@ -122,7 +123,7 @@ static void lcd_trigger_load_tp_fw(struct work_struct *work);
 void esd_handle_switch(struct esd_information *esd_info, bool flag);
 void tp_delta_read_triggered_by_key(int index);
 
-#if IS_ENABLED(CONFIG_FB) || IS_ENABLED(CONFIG_DRM_MSM) || IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY)
+#if TP_USE_FB_NOTIFIER || IS_ENABLED(CONFIG_DRM_MSM) || IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY)
 static int fb_notifier_callback(struct notifier_block *self,
 				unsigned long event, void *data);
 #elif IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER)
@@ -137,7 +138,7 @@ static void tp_touch_release(struct touchpanel_data *ts);
 static void tp_btnkey_release(struct touchpanel_data *ts);
 static inline void tp_work_func(struct touchpanel_data *ts);
 static void lcd_tp_refresh_work(struct work_struct *work);
-#if IS_ENABLED(CONFIG_FB) || \
+#if TP_USE_FB_NOTIFIER || \
 	IS_ENABLED(CONFIG_DRM_MSM) || \
 	IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY) || \
 	IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER) || \
@@ -4189,7 +4190,7 @@ int register_common_touch_device(struct touchpanel_data *pdata)
 			goto err_check_functionality_failed;
 		}
 
-#elif IS_ENABLED(CONFIG_FB)
+#elif TP_USE_FB_NOTIFIER
 		ts->fb_notif.notifier_call = fb_notifier_callback;
 		ret = fb_register_client(&ts->fb_notif);
 
@@ -4236,7 +4237,7 @@ int register_common_touch_device(struct touchpanel_data *pdata)
 	INIT_WORK(&ts->speed_up_work, speedup_resume);
 	INIT_WORK(&ts->fw_update_work, tp_fw_update_work);
 
-#if IS_ENABLED(CONFIG_FB) || \
+#if TP_USE_FB_NOTIFIER || \
 		IS_ENABLED(CONFIG_DRM_MSM) || \
 		IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY) || \
 		IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER) || \
@@ -4476,7 +4477,7 @@ error_fb_notif:
 #endif
 #elif IS_ENABLED(CONFIG_DRM_MSM) || IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY)
 	msm_drm_unregister_client(&ts->fb_notif);
-#elif IS_ENABLED(CONFIG_FB)
+#elif TP_USE_FB_NOTIFIER
 	fb_unregister_client(&ts->fb_notif);
 #endif
 
@@ -4500,7 +4501,7 @@ EXPORT_SYMBOL(register_common_touch_device);
 void unregister_common_touch_device(struct touchpanel_data *pdata)
 {
 	struct touchpanel_data *ts = pdata;
-#if IS_ENABLED(CONFIG_FB) || IS_ENABLED(CONFIG_DRM_MSM) || IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY)
+#if TP_USE_FB_NOTIFIER || IS_ENABLED(CONFIG_DRM_MSM) || IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY)
 	int ret;
 #endif
 
@@ -4555,7 +4556,7 @@ void unregister_common_touch_device(struct touchpanel_data *pdata)
 		destroy_workqueue(ts->speedup_resume_wq);
 	}
 
-#if IS_ENABLED(CONFIG_FB) || \
+#if TP_USE_FB_NOTIFIER || \
 		IS_ENABLED(CONFIG_DRM_MSM) || \
 		IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY) || \
 		IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER) || \
@@ -4611,7 +4612,7 @@ void unregister_common_touch_device(struct touchpanel_data *pdata)
 		}
 	}
 
-#elif IS_ENABLED(CONFIG_FB)
+#elif TP_USE_FB_NOTIFIER
 
 	if (ts->fb_notif.notifier_call) {
 		ret = fb_unregister_client(&ts->fb_notif);
@@ -4664,7 +4665,7 @@ int common_touch_data_free(struct touchpanel_data *pdata)
 }
 EXPORT_SYMBOL(common_touch_data_free);
 
-#if IS_ENABLED(CONFIG_FB) || \
+#if TP_USE_FB_NOTIFIER || \
 	IS_ENABLED(CONFIG_DRM_MSM) || \
 	IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY) || \
 	IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER) || \
@@ -5045,7 +5046,7 @@ EXIT:
 	}
 }
 
-#if IS_ENABLED(CONFIG_FB) || \
+#if TP_USE_FB_NOTIFIER || \
 	IS_ENABLED(CONFIG_DRM_MSM) || \
 	IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY) || \
 	IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER) || \
@@ -5596,7 +5597,7 @@ static void lcd_trigger_load_tp_fw(struct work_struct *work)
 	}
 }
 
-#if IS_ENABLED(CONFIG_FB) || \
+#if TP_USE_FB_NOTIFIER || \
 	IS_ENABLED(CONFIG_DRM_MSM) || \
 	IS_ENABLED(CONFIG_DRM_OPLUS_NOTIFY) || \
 	IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER) || \
