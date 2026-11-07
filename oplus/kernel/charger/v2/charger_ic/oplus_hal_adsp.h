@@ -22,7 +22,7 @@
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 6, 0))
 #include <linux/soc/qcom/qti_pmic_glink.h>
 #else
-#include <linux/soc/qcom/pmic_glink.h>
+#include <linux/soc/qcom/qti_pmic_glink.h>
 #endif
 #include <linux/soc/qcom/battery_charger.h>
 #include <linux/regmap.h>
