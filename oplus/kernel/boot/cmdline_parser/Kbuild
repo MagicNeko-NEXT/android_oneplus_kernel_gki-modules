@@ -1,1 +1,0 @@
-obj-m := oplusboot.o oplus_ftm_mode.o oplus_charger_present.o buildvariant.o cdt_integrity.o simcardnum.o

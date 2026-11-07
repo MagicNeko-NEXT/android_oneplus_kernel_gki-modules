@@ -1,5 +1,0 @@
-obj-m := oplus_bsp_boot_projectinfo.o
-oplus_bsp_boot_projectinfo-y := qcom/oplus_project.o
-ccflags-y += -DOPLUS_VND_BUILD_PLATFORM="\"$(OPLUS_VND_BUILD_PLATFORM)\""
-ccflags-y += -DOPLUS_VND_BUILD_CHIPSET_COMPANY="\"$(OPLUS_VND_BUILD_CHIPSET_COMPANY)\""
-KBUILD_EXTRA_SYMBOLS += $(M)/../cmdline_parser/Module.symvers
