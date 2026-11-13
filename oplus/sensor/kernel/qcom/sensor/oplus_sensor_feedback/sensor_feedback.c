@@ -1084,14 +1084,38 @@ static int sensor_fb_notifier(struct notifier_block *nb,
 	}
 	return 0;
 }
+#elif IS_ENABLED(CONFIG_OPLUS_SENSOR_DRM_PANEL_NOTIFY)
+void ssc_fb_set_screen_status(int status)
+{
+	static int screen_status = SCREEN_INIT;
+	struct sensor_fb_cxt *sns_cxt = g_sensor_fb_cxt;
+
+	if (status == SCREEN_ON && screen_status != SCREEN_ON) {
+		screen_status = SCREEN_ON;
+		spin_lock(&sns_cxt->rw_lock);
+		sns_cxt->node_type = 2; /*sleep ratio type resume*/
+		spin_unlock(&sns_cxt->rw_lock);
+		set_bit(THREAD_WAKEUP, (unsigned long *)&sns_cxt->wakeup_flag);
+		wake_up(&sns_cxt->wq);
+		pr_info("%s: sensor_fb_notifier resume \n", __func__);
+	} else if (status == SCREEN_OFF && screen_status != SCREEN_OFF) {
+		screen_status = SCREEN_OFF;
+		spin_lock(&sns_cxt->rw_lock);
+		sns_cxt->node_type = 3; /*sleep ratio type suspend*/
+		spin_unlock(&sns_cxt->rw_lock);
+		set_bit(THREAD_WAKEUP, (unsigned long *)&sns_cxt->wakeup_flag);
+		wake_up(&sns_cxt->wq);
+		pr_info("%s: sensor_fb_notifier suspend \n", __func__);
+	}
+	return;
+}
+EXPORT_SYMBOL(ssc_fb_set_screen_status);
 #elif defined(CONFIG_FB)
 static int sensor_fb_notifier(struct notifier_block *nb,
 	unsigned long event, void *data)
 {
 	int blank;
 	struct fb_event *evdata = data;
-	struct sensor_fb_cxt *sns_cxt = container_of(nb, struct sensor_fb_cxt, fb_notif);
-	struct timespec now_time;
 
 	if (evdata && evdata->data) {
 		//if(event == FB_EARLY_EVENT_BLANK || event == FB_EVENT_BLANK)
@@ -1109,38 +1133,6 @@ static int sensor_fb_notifier(struct notifier_block *nb,
 	}
 	return 0;
 }
-#elif IS_ENABLED(CONFIG_OPLUS_SENSOR_DRM_PANEL_NOTIFY)
-void ssc_fb_set_screen_status(int status)
-{
-	static int screen_status = SCREEN_INIT;
-	struct sensor_fb_cxt *sns_cxt = g_sensor_fb_cxt;
-
-	if (status == SCREEN_ON && screen_status != SCREEN_ON) {
-		screen_status = SCREEN_ON;
-
-		spin_lock(&sns_cxt->rw_lock);
-		sns_cxt->node_type = 2; /*sleep ratio type resume*/
-		spin_unlock(&sns_cxt->rw_lock);
-		set_bit(THREAD_WAKEUP, (unsigned long *)&sns_cxt->wakeup_flag);
-
-		/*wake_up_interruptible(&sensor_fb_cxt->wq);*/
-		wake_up(&sns_cxt->wq);
-		pr_info("%s: sensor_fb_notifier resume \n", __func__);
-	} else if (status == SCREEN_OFF && screen_status != SCREEN_OFF) {
-		screen_status = SCREEN_OFF;
-
-		spin_lock(&sns_cxt->rw_lock);
-		sns_cxt->node_type = 3; /*sleep ratio type suspend*/
-		spin_unlock(&sns_cxt->rw_lock);
-
-		set_bit(THREAD_WAKEUP, (unsigned long *)&sns_cxt->wakeup_flag);
-		/*wake_up_interruptible(&sensor_fb_cxt->wq);*/
-		wake_up(&sns_cxt->wq);
-		pr_info("%s: sensor_fb_notifier suspend \n", __func__);
-	}
-	return;
-}
-EXPORT_SYMBOL(ssc_fb_set_screen_status);
 #endif /* CONFIG_DRM_MSM */
 //#endif /* CONFIG_FB */
 
@@ -1192,6 +1184,8 @@ static int sensor_sleep_ratio_init(struct sensor_fb_cxt *sensor_fb_cxt) {
 	if (err) {
 		pr_err("Unable to register fb_notifier: %d\n", err);
 	}
+#elif IS_ENABLED(CONFIG_OPLUS_SENSOR_DRM_PANEL_NOTIFY)
+	/* Screen state notifications come via ssc_fb_set_screen_status() */
 #elif defined(CONFIG_FB)
 	sensor_fb_cxt->fb_notif.notifier_call = sensor_fb_notifier;
 	err = fb_register_client(&sensor_fb_cxt->fb_notif);

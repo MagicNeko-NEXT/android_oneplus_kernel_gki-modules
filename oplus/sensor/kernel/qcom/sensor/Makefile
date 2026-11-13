@@ -1,8 +1,4 @@
-oplus_sensor-y := oplus_sensor_devinfo.o
-oplus_sensor-y += oplus_press_cali_info.o
-oplus_sensor-y += oplus_pad_als_info.o
-oplus_sensor_deviceinfo-y := $(oplus_sensor-y)
-obj-m += oplus_sensor_deviceinfo.o
+# Build 5.10 SMEM-layout sensor devinfo (avoid parallel .o race with 5.10/).
 obj-y += oplus_ssc_interact/
 obj-y += oplus_sensor_feedback/
 obj-y += 5.10/
