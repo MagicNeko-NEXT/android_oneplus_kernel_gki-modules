@@ -61,14 +61,15 @@ extern void mt_spi_disable_master_clk(struct spi_device *spidev);
 #define fp_spi_disable_master_clk(pdriver) (void)(pdriver);
 #endif
 
+#if (IS_ENABLED(CONFIG_DRM_PANEL_NOTIFY) || IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER))
+#include <drm/drm_panel.h>
+#include <linux/soc/qcom/panel_event_notifier.h>
+#endif
 #if defined(CONFIG_DRM_MSM)
 #include <linux/msm_drm_notify.h>
 #define oplus_register_notifier_client(pnotifier) msm_drm_register_client(pnotifier);  // inbit
 #elif defined(CONFIG_FB)
 #define oplus_register_notifier_client(pnotifier) fb_register_client(pnotifier);  // inbit
-#elif (IS_ENABLED(CONFIG_DRM_PANEL_NOTIFY) || IS_ENABLED(CONFIG_QCOM_PANEL_EVENT_NOTIFIER))
-#include <drm/drm_panel.h>
-#include <linux/soc/qcom/panel_event_notifier.h>
 #endif
 
 #if defined(CONFIG_OPLUS_MTK_DRM_GKI_NOTIFY)  || defined(MTK_PLATFORM)
