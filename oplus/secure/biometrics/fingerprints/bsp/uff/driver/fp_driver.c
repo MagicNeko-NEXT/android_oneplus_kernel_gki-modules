@@ -1272,8 +1272,8 @@ static void __exit fp_exit(void) {
 }
 module_exit(fp_exit);
 
-#if defined(CONFIG_OPLUS_FINGERPRINT_GKI_ENABLE)
-MODULE_SOFTDEP("pre:mtk_disp_notify");
+#if defined(CONFIG_OPLUS_FINGERPRINT_GKI_ENABLE) && defined(CONFIG_UFF_FINGERPRINT_MTK)
+MODULE_SOFTDEP("pre: mtk_disp_notify");
 #endif
 
 #if defined(CONFIG_OPLUS_FEATURE_OLC)
