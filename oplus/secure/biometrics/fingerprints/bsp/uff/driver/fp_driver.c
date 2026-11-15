@@ -1277,15 +1277,15 @@ MODULE_SOFTDEP("pre: mtk_disp_notify");
 #endif
 
 #if defined(CONFIG_OPLUS_FEATURE_OLC)
-MODULE_SOFTDEP("pre:oplus_log_core");
+MODULE_SOFTDEP("pre: oplus_log_core");
 #endif
 
 #if defined(CONFIG_FP_SUPPLY_MODE_LDO)
-MODULE_SOFTDEP("pre:wl2868c");
+MODULE_SOFTDEP("pre: wl2868c");
 #endif
 
 #if defined(CONFIG_FP_SUPPLY_MODE_LDO_DIO8018)
-MODULE_SOFTDEP("pre:DIO8018");
+MODULE_SOFTDEP("pre: DIO8018");
 #endif
 
 MODULE_DESCRIPTION("oplus fingerprint common driver");
