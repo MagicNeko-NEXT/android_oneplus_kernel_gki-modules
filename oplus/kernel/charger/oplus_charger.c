@@ -14497,8 +14497,14 @@ static void oplus_fg_soft_reset_work(struct work_struct *work)
 		chip->fg_check_ibat_cnt = 0;
 	}
 
-	chg_debug("reset_done [%s] ibat_cnt[%d] fail_cnt[%d] \n", chip->fg_soft_reset_done == true ? "true" : "false",
-		chip->fg_check_ibat_cnt, chip->fg_soft_reset_fail_cnt);
+	/* Only worth a line when the reset actually ran and failed. The idle
+	 * path (no reset needed) used to log here every six seconds, which at
+	 * loglevel=6 lands in dmesg and buries real charger errors.
+	 */
+	if (chip->fg_soft_reset_fail_cnt)
+		chg_err("reset_done [%s] ibat_cnt[%d] fail_cnt[%d] \n",
+			chip->fg_soft_reset_done == true ? "true" : "false",
+			chip->fg_check_ibat_cnt, chip->fg_soft_reset_fail_cnt);
 }
 
 int oplus_plc_based_buck_setting(struct oplus_chg_chip *chip, int enable)
