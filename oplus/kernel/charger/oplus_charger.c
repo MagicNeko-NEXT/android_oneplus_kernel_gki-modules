@@ -14483,7 +14483,12 @@ static void oplus_fg_soft_reset_work(struct work_struct *work)
 		if (rc == 0) {
 			chip->fg_soft_reset_done = true;
 			chip->fg_soft_reset_fail_cnt = 0;
-		} else if (rc == 1) {
+		} else {
+			/* rc == 1 is a reported failure, rc < 0 means the gauge or
+			 * its soft_reset_rc_sfr op is not available yet. Both leave
+			 * the reset undone, so count them the same way instead of
+			 * letting the state machine stall with fail_cnt stuck at 0.
+			 */
 			chip->fg_soft_reset_done = false;
 			chip->fg_soft_reset_fail_cnt++;
 		}
@@ -14492,7 +14497,7 @@ static void oplus_fg_soft_reset_work(struct work_struct *work)
 		chip->fg_check_ibat_cnt = 0;
 	}
 
-	chg_err("reset_done [%s] ibat_cnt[%d] fail_cnt[%d] \n", chip->fg_soft_reset_done == true ? "true" : "false",
+	chg_debug("reset_done [%s] ibat_cnt[%d] fail_cnt[%d] \n", chip->fg_soft_reset_done == true ? "true" : "false",
 		chip->fg_check_ibat_cnt, chip->fg_soft_reset_fail_cnt);
 }
 
